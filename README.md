@@ -1,5 +1,5 @@
 # ruffbox
-Simple JavaScript to open an image in a modal
+Simple JavaScript to open an image in a modal (minified 2.34 KB)
 
 ## Usage
 `new Ruffbox({selector: 'a.ruffbox', transition: 300});`
