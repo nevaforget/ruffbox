@@ -1,15 +1,15 @@
 /**
  * @author d.kressler
  * @date 2020-08-12
+ * @version 1.0.0
  */
 const Ruffbox = function(params)
 {
     let instance = this;
     const defaults = {
         transition: 300,
-        selector: '.ruffbox'
+        selector: 'a.ruffbox'
     };
-
     params = {...params, ...defaults};
 
     let elms = {};
@@ -71,7 +71,7 @@ const Ruffbox = function(params)
             max-width:100%
         }
         .ruffboxWrap.portrait img {
-            max-height: 90vw;
+            max-height: 90vh;
             height: 100%;
             width: auto;
             max-width:none
@@ -85,10 +85,10 @@ const Ruffbox = function(params)
            max-height:none
         }
         .ruffboxWrap.portrait img {
-           max-height: 90vw;
-           height: 100%;
-           width: auto;
-           max-width:none
+           max-width: 90vw;
+           width: 100%;
+           height: auto;
+           max-height:none
         }
     }
     `;
@@ -102,7 +102,7 @@ const Ruffbox = function(params)
         setTimeout(function(){elms.wrap.innerHTML = '';}, params.transition);
     });
     
-    instance.elements = document.querySelectorAll('.modalGallery a');
+    instance.elements = document.querySelectorAll(params.selector);
     for(let i = 0; i < instance.elements.length; i++) {
         instance.elements[i].addEventListener('click', function(e) {
             e.preventDefault();
